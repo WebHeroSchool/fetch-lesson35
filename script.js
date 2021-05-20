@@ -1,5 +1,6 @@
 const body = document.body;
 let url = window.location.toString();
+let urlFetch = getUserName(url);
 
 function getUserName(url) {
   let allUrl = url.split('=');
@@ -10,8 +11,6 @@ function getUserName(url) {
 
   return 'https://api.github.com/users/' + name;
 }
-
-let urlFetch = getUserName(url);
 
 fetch(urlFetch)
   .then(res => res.json())
